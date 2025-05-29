@@ -1,26 +1,311 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Custom base styles */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #4CAF50;        /* green-600 */
+  --primary-dark: #15803d;   /* green-700 */
+  --primary-light: #dcfce7;  /* green-100 */
+
+  --secondary: #0f766e;      /* teal-700 */
+  --accent: #f59e0b;         /* amber-500 */
+  --accent-light: #fef3c7;   /* amber-100 */
+
+  --text: #111827;           /* gray-900 */
+  --text-light: #6b7280;     /* gray-500 */
+  --background: #8D6E63;     /* Changed to earth tone brown */
+
+  --earth: #8D6E63;          /* brown (earth tone) */
+  --earth-light: #efebe9;    /* light brown */
+  
+  --sun-yellow: #FBC02D;     /* ripe yellow */
+  --sun-yellow-light: #fff9c4; /* soft yellow */
+
+  --off-white: #FAFAFA;
+  --white: #FFFFFF;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, 
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--text);
+  background-color: var(--background);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Custom component classes */
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply inline-block px-6 py-3 bg-green-600 text-white font-medium rounded-md 
+           hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 
+           focus:ring-green-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply inline-block px-6 py-3 bg-white text-green-600 font-medium rounded-md 
+           border border-green-600 hover:bg-green-50 transition-colors 
+           focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2;
+  }
+  
+  .btn-sm {
+    @apply px-4 py-2 text-sm;
+  }
+  
+  /* Cards */
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden;
+  }
+  
+  .card-header {
+    @apply p-4 border-b border-gray-200;
+  }
+  
+  .card-body {
+    @apply p-6;
+  }
+  
+  .card-footer {
+    @apply p-4 border-t border-gray-200 bg-gray-50;
+  }
+  
+  /* Form elements */
+  .form-label {
+    @apply block text-gray-700 font-medium mb-2;
+  }
+  
+  .form-input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-md 
+           focus:outline-none focus:ring-2 focus:ring-green-500;
+  }
+  
+  .form-select {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-md bg-white
+           focus:outline-none focus:ring-2 focus:ring-green-500;
+  }
+  
+  .form-checkbox {
+    @apply h-4 w-4 text-green-600 rounded focus:ring-green-500 border-gray-300;
+  }
+  
+  .form-radio {
+    @apply h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300;
+  }
+  
+  /* Badges */
+  .badge {
+    @apply inline-block px-2 py-1 text-xs font-medium rounded-full;
+  }
+  
+  .badge-green {
+    @apply bg-green-100 text-green-800;
+  }
+  
+  .badge-blue {
+    @apply bg-blue-100 text-blue-800;
+  }
+  
+  .badge-amber {
+    @apply bg-amber-100 text-amber-800;
+  }
+  
+  .badge-red {
+    @apply bg-red-100 text-red-800;
+  }
+  
+  /* Product card */
+  .product-card {
+    @apply bg-white rounded-lg shadow hover:shadow-md transition-shadow duration-300;
+  }
+  
+  .product-image {
+    @apply h-48 bg-green-100 rounded-t-lg relative;
+  }
+  
+  .product-info {
+    @apply p-4;
+  }
+  
+  .product-farmer {
+    @apply text-sm text-green-600 mb-1;
+  }
+  
+  .product-name {
+    @apply text-lg font-medium text-gray-900 hover:text-green-600 transition-colors;
+  }
+  
+  .product-price {
+    @apply font-semibold text-lg mt-2;
+  }
+  
+  .product-unit {
+    @apply text-sm text-gray-500;
+  }
+  
+  /* Seasonal badges */
+  .season-spring {
+    @apply bg-green-100 text-green-800;
+  }
+  
+  .season-summer {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+  
+  .season-fall {
+    @apply bg-orange-100 text-orange-800;
+  }
+  
+  .season-winter {
+    @apply bg-blue-100 text-blue-800;
+  }
+  
+  /* Responsive container */
+  .container {
+    @apply mx-auto px-4;
+    max-width: 1280px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Additional custom styles */
+.prose h1 {
+  @apply text-3xl font-bold mb-6 text-gray-900;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold mb-4 text-gray-900;
+}
+
+.prose h3 {
+  @apply text-xl font-bold mb-3 text-gray-900;
+}
+
+.prose p {
+  @apply mb-4 text-gray-700 leading-relaxed;
+}
+
+.prose ul {
+  @apply mb-4 list-disc pl-5 text-gray-700;
+}
+
+.prose ol {
+  @apply mb-4 list-decimal pl-5 text-gray-700;
+}
+
+.prose a {
+  @apply text-green-600 hover:text-green-700 underline;
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded hover:bg-gray-500;
+}
+
+/* Image placeholders */
+.placeholder {
+  @apply bg-gradient-to-br from-green-50 to-green-100;
+  @apply flex items-center justify-center text-green-800/20 font-bold;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slideInFromBottom 0.5s ease-out;
+}
+
+/* Agriculture specific */
+.harvest-calendar {
+  @apply grid grid-cols-1 md:grid-cols-4 gap-4 my-6;
+}
+
+.harvest-calendar-month {
+  @apply p-4 rounded-lg;
+}
+
+.farm-practice-list {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-2 my-4;
+}
+
+.farm-practice-item {
+  @apply flex items-center text-gray-700;
+}
+
+.farm-practice-icon {
+  @apply mr-2 text-green-600;
+}
+
+.quantity-selector {
+  @apply flex items-center border rounded;
+}
+
+.quantity-button {
+  @apply px-3 py-1 text-gray-600 hover:text-gray-800;
+}
+
+.quantity-input {
+  @apply w-12 text-center border-x py-1;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  @apply fixed inset-0 z-50 bg-white transition-transform transform duration-300 ease-in-out;
+}
+
+.mobile-menu.open {
+  @apply translate-x-0;
+}
+
+.mobile-menu.closed {
+  @apply -translate-x-full;
+}
+
+/* Footer styles */
+.footer-heading {
+  @apply text-lg font-semibold mb-4 text-white;
+}
+
+.footer-link {
+  @apply text-green-100 hover:text-white transition;
+}
+
+.footer-socials {
+  @apply flex space-x-4 mt-4;
+}
+
+.footer-social-icon {
+  @apply text-green-100 hover:text-white transition;
 }

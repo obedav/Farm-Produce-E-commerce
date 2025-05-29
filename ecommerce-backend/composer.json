@@ -1,0 +1,17 @@
+{
+    "name": "obe/ecommerce-backend",
+    "description": "Farm produce ecommerce site",
+    "type": "project",
+    "require-dev": {
+        "slim/slim": "^4.14",
+        "firebase/php-jwt": "^6.11"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
