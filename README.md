@@ -36,10 +36,6 @@ Version Control: GitHub (monorepo style with frontend + backend)
 Deployment: Vercel
  (frontend), Azure/AWS/Node server (backend)
 
-📸 Screenshots
-
-(Add screenshots here of home page, product listing, cart, and checkout — will make your repo shine for Upwork clients!)
-
 📦 Getting Started
 
 Clone the repo:
