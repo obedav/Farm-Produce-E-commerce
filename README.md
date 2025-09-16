@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Farm Produce E-Commerce
 
-## Getting Started
+A modern Next.js + TypeScript e-commerce platform built for selling farm produce online.
+This project demonstrates a headless commerce architecture, featuring product browsing, cart management, checkout flow, and a responsive UI with Tailwind CSS.
 
-First, run the development server:
+🚀 Features
 
-```bash
+Next.js 14 (App Router) – optimized for SEO, SSR, and fast rendering.
+
+Product Browsing – clean catalog with categories and responsive grids.
+
+Shopping Cart – add/remove products, update quantities, calculate totals.
+
+Checkout Flow – secure order placement (integrated with backend API).
+
+Authentication – basic login/register functionality.
+
+API Integration – backend powered by Node.js/Express (or PHP service in this repo).
+
+Responsive UI – styled with Tailwind CSS for mobile-first layouts.
+
+Scalable Architecture – ready to extend with Stripe, GraphQL, or headless CMS.
+
+🛠️ Tech Stack
+
+Frontend: Next.js
+ + TypeScript
+ + Tailwind CSS
+
+Backend: Node.js / PHP (API for products & checkout)
+
+Database: MySQL
+
+Version Control: GitHub (monorepo style with frontend + backend)
+
+Deployment: Vercel
+ (frontend), Azure/AWS/Node server (backend)
+
+📸 Screenshots
+
+(Add screenshots here of home page, product listing, cart, and checkout — will make your repo shine for Upwork clients!)
+
+📦 Getting Started
+
+Clone the repo:
+
+git clone https://github.com/obedav/Farm-Produce-E-commerce.git
+cd Farm-Produce-E-commerce
+
+
+Install dependencies:
+
+npm install
+
+
+Run development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open http://localhost:3000
+ in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+📂 Project Structure
+/src
+  /app          # Next.js App Router pages
+  /components   # Reusable UI components (Navbar, ProductCard, Cart)
+  /lib          # API utilities & helpers
+  /styles       # Tailwind configs & global styles
 
-## Learn More
+/ecommerce-backend
+  /api          # Backend APIs for products & checkout
 
-To learn more about Next.js, take a look at the following resources:
+🎯 Roadmap
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ Integrate Stripe for secure payments
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ Add GraphQL layer for product queries (Shopify-like structure)
 
-## Deploy on Vercel
+ Implement wishlist & order history
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+ Deploy full-stack on Azure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+👤 Author
+
+David Makinde-George
+
+
+
+📄 License
+
+This project is licensed under the MIT License – feel free to use and adapt.
